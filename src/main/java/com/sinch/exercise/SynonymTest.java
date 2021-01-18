@@ -5,21 +5,21 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 public class SynonymTest {
 
   private static final List<Pair<String, String>> SYNONYMS =
       Arrays.asList(
-          new Pair("approval", "popularity"),
-          new Pair("rate", "ratings")
+          Pair.of("approval", "popularity"),
+          Pair.of("rate", "ratings")
       );
 
   private static final List<Pair<String, String>> SENTENCES =
       Arrays.asList(
-          new Pair("trump approval rate", "trump popularity ratings"),
-          new Pair("trump approval rates", "trump popularity ratings"),
-          new Pair("trump approval rate", "popularity ratings trump")
+          Pair.of("trump approval rate", "trump popularity ratings"),
+          Pair.of("trump approval rates", "trump popularity ratings"),
+          Pair.of("trump approval rate", "popularity ratings trump")
       );
 
   private static final List<Pair<String, String>> EXPECTATION = Collections

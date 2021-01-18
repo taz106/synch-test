@@ -2,7 +2,7 @@ package com.sinch.exercise;
 
 import java.util.Collections;
 import java.util.List;
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 public class SynonymousFilter {
 
