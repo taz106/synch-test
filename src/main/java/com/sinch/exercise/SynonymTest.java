@@ -27,7 +27,12 @@ public class SynonymTest {
 
   public static void main(String[] args) {
     try {
-      List<Pair<String, String>> result = new SynonymousFilter(SYNONYMS).filter(SENTENCES);
+      SynonymousFilter underTest = new SynonymousFilter(SYNONYMS);
+      List<Pair<String, String>> result = underTest.filter(SENTENCES.stream())
+          .collect(Collectors.toList());
+      if (result.isEmpty()) {
+        result = underTest.filter(SENTENCES);
+      }
       if (EXPECTATION.size() == result.size() && Streams.zip(
           SENTENCES.stream(),
           result.stream(),
