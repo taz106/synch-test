@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:27.0.1-jre'
+    implementation 'org.apache.commons:commons-lang3:3.11'
+}
+
+group = 'com.sinch.exercise'
+version = '1.0-SNAPSHOT'
+description = 'synonym-test'
+java.sourceCompatibility = JavaVersion.VERSION_15
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
