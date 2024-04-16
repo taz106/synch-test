@@ -41,7 +41,7 @@ public class SynonymTest {
         System.out.println("Correct result!");
       } else {
         System.out.println(
-            "Expected: " + sentencesToString(SENTENCES) + "\nBut was: " + sentencesToString(
+            "Expected: " + sentencesToString(EXPECTATION) + "\nBut was: " + sentencesToString(
                 result));
       }
     } catch (Exception e) {
