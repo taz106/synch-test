@@ -15,16 +15,30 @@ public class SynonymTest {
           Pair.of("rate", "ratings")
       );
 
+    
   private static final List<Pair<String, String>> SENTENCES =
       Arrays.asList(
           Pair.of("trump approval rate", "trump popularity ratings"),
           Pair.of("trump approval rates", "trump popularity ratings"),
-          Pair.of("trump approval rate", "popularity ratings trump")
+          Pair.of("trump approval rate", "popularity ratings trump"),
+          Pair.of("trump approval ", "trump popularity"),
+          Pair.of("trump popularity ", "trump approval"),
+          Pair.of("trump approval ", "trump ratings"),
+          Pair.of("trump approval rate", "trump popularity taz")
+          
       );
 
-  private static final List<Pair<String, String>> EXPECTATION = Collections
-      .emptyList(); // TODO: define expected test result
+      // private static final List<Pair<String, String>> SENTENCES =
+      // Arrays.asList(
+      //     Pair.of("trump approval rates", "trump popularity ratings")
+          
+      // );
 
+  private static final List<Pair<String, String>> EXPECTATION = Arrays.asList(
+    Pair.of("trump approval rate", "trump popularity ratings"),
+    Pair.of("trump approval ", "trump popularity"),
+    Pair.of("trump popularity ", "trump approval")
+);
   public static void main(String[] args) {
     try {
       SynonymousFilter underTest = new SynonymousFilter(SYNONYMS);
